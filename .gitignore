@@ -1,0 +1,7 @@
+*.asm
+*.tpef
+log.txt
+data/tce_output.bin
+*.img
+proge-out/
+**/*.idf
