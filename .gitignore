@@ -5,3 +5,4 @@ data/tce_output.bin
 *.img
 proge-out/
 **/*.idf
+*.dot

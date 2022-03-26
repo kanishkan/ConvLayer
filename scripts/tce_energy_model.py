@@ -204,7 +204,7 @@ for fu_name, ops in item_ops.items():
         # energy
         if callable(base_energy_per_op[op_name]):
             if op_name in ('ld', 'ldu', 'st'):
-                energy = num * base_energy_per_op[op_name](op_width, as_info[fu_info[fu_name]['as']]['width']/8 *
+                energy = num * base_energy_per_op[op_name](op_width, as_info[fu_info[fu_name]['as']]['width']/8 * \
                                                            as_info[fu_info[fu_name]['as']]['size'])  # calculate energy
             elif op_name in ('rf_read', 'rf_write'):
                 energy = num * base_energy_per_op[op_name](op_width,
@@ -221,8 +221,8 @@ for fu_name, ops in item_ops.items():
 
         # area
         if op_name in ('ld', 'ldu', 'st'):
-            area_factor  = op_width / 32 *
-                    math.sqrt(as_info[fu_info[fu_name]['as']]['width']/8 *
+            area_factor  = op_width / 32 * \
+                    math.sqrt(as_info[fu_info[fu_name]['as']]['width']/8 * \
                     as_info[fu_info[fu_name]['as']]['size'] / base_memory_size)
         elif op_name in ('rf_read', 'rf_write'):
             area_factor = 37 * rf_info[fu_name]['width']/8 * rf_info[fu_name]['size'] * (rf_info[fu_name]['ports'] + 1) / 2
